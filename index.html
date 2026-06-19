@@ -3,309 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Wallace | The Anchor of Motown</title>
+    <title>Ben Wallace | The Iron Wall</title>
     <style>
-        /* Color Palette & Global Variables */
+        /* Modern Design Architecture & Core Variables */
         :root {
-            --pistons-navy: #002D62;
-            --pistons-red: #ED174C;
-            --bg-light: #f4f7f6;
-            --text-dark: #1a1a1a;
-            --card-white: #ffffff;
-            --transition-speed: 0.5s;
+            --navy-dark: #0a1128;
+            --navy-card: #121c3e;
+            --pistons-blue: #0033a0;
+            --pistons-red: #ff003c;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Reset & Base Styles */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            overflow-x: hidden;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--navy-dark);
+            color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Navigation Bar */
+        /* Navigation Systems */
         header {
-            background-color: var(--pistons-navy);
+            background-color: rgba(10, 17, 40, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 4px solid var(--pistons-red);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-bottom: 2px solid rgba(255, 0, 60, 0.3);
         }
         .nav-container {
-            width: 90%;
-            max-width: 1200px;
+            width: 92%;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
         }
-        header h1 {
-            color: #fff;
-            font-size: 1.4rem;
-            letter-spacing: 2px;
-            font-weight: 800;
+        .logo-group h1 {
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            font-weight: 900;
+            background: linear-gradient(to right, #fff, var(--pistons-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 12px;
         }
         nav ul li a {
-            color: rgba(255, 255, 255, 0.75);
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 1.5px;
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
             cursor: pointer;
         }
         nav ul li a:hover, nav ul li a.active-nav {
             color: #fff;
-            background-color: var(--pistons-red);
+            background-color: rgba(255, 0, 60, 0.15);
+            border-color: var(--pistons-red);
+            text-shadow: 0 0 8px rgba(255, 0, 60, 0.6);
         }
 
-        /* Fixed Hero Banner Structure */
+        /* Epic Hero Display Layout */
         .hero {
-            background: linear-gradient(rgba(0, 45, 98, 0.88), rgba(0, 45, 98, 0.88)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200') no-repeat center center/cover;
-            color: white;
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 17, 40, 0.95) 40%, rgba(0, 51, 160, 0.4)), url('https://images.unsplash.com/photo-1519766304817-4f37bda74a27?q=80&w=1400') no-repeat center center/cover;
+            padding: 80px 20px;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--pistons-red);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
         .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
+            font-size: 4rem;
+            font-weight: 950;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 10px;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            color: var(--text-muted);
             font-style: italic;
-            color: #cbd5e1;
         }
 
-        /* Main Viewport Workspace */
+        /* Page Content Workspace */
         main {
             flex: 1;
             position: relative;
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto;
+            width: 92%;
+            max-width: 1300px;
+            margin: 50px auto;
         }
 
-        /* Clean Transition and Section Animation Rules */
+        /* Tab / View Transition Engine Properties */
         .page-section {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--card-white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            
-            /* Hidden by default, shifted down and faded out */
             opacity: 0;
             visibility: hidden;
-            transform: translateY(30px);
+            transform: scale(0.98) translateY(20px);
             pointer-events: none;
-            transition: opacity var(--transition-speed) ease, 
-                        transform var(--transition-speed) cubic-bezier(0.34, 1.56, 0.64, 1), 
-                        visibility var(--transition-speed);
+            transition: opacity var(--transition-smooth), 
+                        transform var(--transition-smooth), 
+                        visibility var(--transition-smooth);
         }
-
-        /* The Active Page State */
         .page-section.active-page {
-            position: relative; /* Brings it back into layout document flow */
+            position: relative;
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transform: scale(1) translateY(0);
             pointer-events: auto;
         }
 
-        /* Content Formatting Typography */
+        /* Complex Document Formatting Layouts */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 968px) {
+            .article-layout { grid-template-columns: 1fr; }
+        }
+
+        /* Advanced Card Styling UI */
+        .card {
+            background-color: var(--navy-card);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
         h3 {
-            color: var(--pistons-navy);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--bg-light);
-            padding-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        h3::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 32px;
+            background-color: var(--pistons-red);
+            border-radius: 4px;
         }
         p {
-            font-size: 1.1rem;
-            line-height: 1.75;
-            color: #4a5568;
-            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 24px;
         }
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        li {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #4a5568;
+        .bold-white {
+            color: #fff;
+            font-weight: 600;
         }
 
-        /* Decorative Highlight Box */
-        .highlight-box {
-            background-color: var(--bg-light);
-            border-left: 5px solid var(--pistons-red);
+        /* Data Visualization Metric Containers */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .metric-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
             padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-        }
-
-        /* Table Styling for Prime Era */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        th {
-            background-color: var(--pistons-navy);
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #888;
             text-align: center;
-            padding: 25px 0;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--pistons-red);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        /* Best Plays Multimedia Gallery Engine */
+        .plays-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+        @media (max-width: 600px) {
+            .plays-grid { grid-template-columns: 1fr; }
+        }
+        .play-card {
+            background-color: var(--navy-card);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease;
+        }
+        .play-card:hover {
+            transform: translateY(-5px);
+        }
+        .media-frame {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .media-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .badge-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--pistons-red);
+            color: white;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .play-details {
+            padding: 25px;
+        }
+        .play-details h4 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Sidebar Styling Elements */
+        .sidebar-panel {
+            background: linear-gradient(180deg, var(--navy-card), rgba(18, 28, 62, 0.3));
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.02);
+            height: fit-content;
+        }
+        .sidebar-panel h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--pistons-red);
+        }
+        .list-items li {
+            list-style: none;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* Footer System */
+        footer {
+            background-color: #050914;
+            padding: 30px;
+            text-align: center;
             font-size: 0.9rem;
-            margin-top: auto;
+            color: rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255,255,255,0.02);
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation Menu -->
+    <!-- Header Navigation Shell -->
     <header>
         <div class="nav-container">
-            <h1>BIG BEN #3</h1>
+            <div class="logo-group">
+                <h1>WALLACE // 03</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a onclick="switchPage('early-career')" id="nav-early-career" class="active-nav">Early Career</a></li>
-                    <li><a onclick="switchPage('drafted')" id="nav-drafted">Drafted / Entry</a></li>
+                    <li><a onclick="switchPage('drafted')" id="nav-drafted">Drafted</a></li>
                     <li><a onclick="switchPage('prime')" id="nav-prime">Prime Era</a></li>
                     <li><a onclick="switchPage('final-season')" id="nav-final-season">Final Season</a></li>
+                    <li><a onclick="switchPage('best-plays')" id="nav-best-plays">Best Plays</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Content Header Frame -->
+    <!-- Visual Hero Spotlight Area -->
     <div class="hero">
-        <h2>Ben Wallace</h2>
-        <p>"Heart over height. Every single night."</p>
+        <span class="hero-badge">Hall of Fame // Class of 2021</span>
+        <h2>The Anchor of Motown</h2>
+        <p>"They layout the rules for scoring, but nobody ever drafted rules for stopping people."</p>
     </div>
 
-    <!-- Main Dynamic Content Engine -->
+    <!-- Core Interactive Application Space -->
     <main>
 
         <!-- PAGE 1: EARLY CAREER -->
         <section id="early-career" class="page-section active-page">
-            <h3>Early Career & Roots</h3>
-            <p>Born in White Hall, Alabama, Ben Wallace was the 10th of 11 children. Growing up in a massive household meant competing fiercely for everything, a reality that deeply shaped his legendary work ethic on the hardwood basketball courts.</p>
-            <p>He attended Central Community College in Selma, Alabama, before transferring to **Virginia Union University**, a Division II HBCU. Under the guidance of legendary coach Dave Robbins, Wallace blossomed into a dominant force, leading the Panthers to the Division II Final Four while averaging 12.5 rebounds and nearly 4 blocks per game.</p>
-            <div class="highlight-box">
-                "In high school, Ben used to charge his brothers and local kids a few cents to cut their hair just to buy energy snacks and extra tape for his worn-out playing shoes."
+            <div class="article-layout">
+                <div class="main-content">
+                    <div class="card">
+                        <h3>Deep Alabama Roots</h3>
+                        <p>Ben Cameron Wallace grew up in rural <span class="bold-white">White Hall, Alabama</span>, as the tenth of eleven children. Within this intensely competitive, under-resourced household, passivity was never an option. To earn respect and secure his space, Ben spent his formative years playing hyper-aggressive physical sports against his older brothers, establishing a mental edge that would later completely transform his defensive approach to modern basketball.</p>
+                        <p>Without standard facilities, Wallace optimized his raw conditioning through manual farm labor. His relentless focus earned him an athletic position at Central Community College in Selma, before transferring to <span class="bold-white">Virginia Union University</span>, a historically Black university (HBCU) playing in NCAA Division II.</p>
+                    </div>
+                    <div class="card">
+                        <h3>The Collegiate Turning Point</h3>
+                        <p>Under the transformative guidance of legendary Division II basketball mastermind Dave Robbins, Wallace evolved from an unrefined athlete into an organized defensive weapon. Robbins noticed Ben's unparalleled vertical leap, reaction timing, and interior instincts, choosing to drop him right into the center of a specialized zone press.</p>
+                        <p>During his senior campaign at Virginia Union, Ben registered stunning averages of <span class="bold-white">12.5 rebounds and 3.9 blocked shots per game</span>, single-handedly powering the Panthers directly into the NCAA Division II Final Four tournament brackets.</p>
+                    </div>
+                </div>
+                <div class="sidebar-zone">
+                    <div class="sidebar-panel">
+                        <h4>Early Milestones</h4>
+                        <ul class="list-items">
+                            <li><strong>1994:</strong> First Team All-JNCAA Selection</li>
+                            <li><strong>1995:</strong> D-II All-American Honors</li>
+                            <li><strong>1996:</strong> Guided VUU to 28-3 Record</li>
+                            <li><strong>HBCU Legacy:</strong> Inducted into the CIAA Hall of Fame</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- PAGE 2: DRAFTED -->
         <section id="drafted" class="page-section">
-            <h3>The Undrafted Phenomenon</h3>
-            <p>Despite his terrifying athletic frame and defensive dominance at Virginia Union, Ben Wallace went **undrafted** in the iconic 1996 NBA Draft. Teams were overly worried about his height, as he measured underneath the standard 6-foot-9 marker required for traditional interior centers.</p>
-            <p>He had a brief, unsuccessful tryout in Italy before the Washington Wizards (then Bullets) signed him as a free agent. He spent his early structural years bouncing between Washington and the Orlando Magic, quietly refining his screen-setting, low-post bodying tactics, and defensive rotations.</p>
-            <div class="highlight-box">
-                Ben Wallace remains the benchmark history maker: he is the first undrafted player in the modern NBA era to be elected into the Naismith Memorial Basketball Hall of Fame (Class of 2021).
+            <div class="article-layout">
+                <div class="main-content">
+                    <div class="card">
+                        <h3>1996: The Invisible Draft Profile</h3>
+                        <p>The iconic <span class="bold-white">1996 NBA Draft</span> features names like Allen Iverson, Kobe Bryant, and Steve Nash. Yet, despite his dominant Division II interior production, Ben Wallace's name was never called over the course of two rounds. Front-office talent scouts were fundamentally blinded by conventional physical dimensions.</p>
+                        <p>Measuring at barely 6'7" without shoes despite playing the traditional Center position, general managers concluded that Wallace was completely unviable. He lacked a polished post-up scoring toolkit, making him an entirely skipped prospect on draft night.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Fighting From the Absolute Margin</h3>
+                        <p>Refusing to abandon his dream, Ben packed his bags for a brief tryout window with Viola Reggio Calabria in Italy, before the <span class="bold-white">Washington Bullets</span> extended a non-guaranteed free agent training camp invitation. Recognizing his baseline value as an intense practice body, Washington kept him at the end of the active roster.</p>
+                        <p>Wallace clawed for every rotation second, demonstrating that raw energy, hard screen-setting, and pure defensive switches could alter the flow of an NBA game without ever requiring a single designed offensive play call.</p>
+                    </div>
+                </div>
+                <div class="sidebar-zone">
+                    <div class="sidebar-panel">
+                        <h4>The Entry Path</h4>
+                        <ul class="list-items">
+                            <li><strong>Draft Night:</strong> Unselected (58 Picks skipped him)</li>
+                            <li><strong>Wizards Stint:</strong> 1996-1999 (Rotational Enforcer)</li>
+                            <li><strong>The Orlando Shift:</strong> 1999-2000 (Started all 81 games)</li>
+                            <li><strong>The Trade:</strong> Sent to Detroit as a throw-in component for Grant Hill</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- PAGE 3: PRIME -->
         <section id="prime" class="page-section">
-            <h3>The Prime Era: Motown Dominance</h3>
-            <p>In 2000, Wallace was traded to the Detroit Pistons in a multi-player package deal for Grant Hill. It was here that "Big Ben" became a cultural icon. Anchoring the defensive frontline, he turned the Pistons into a ruthless defensive machine.</p>
-            <p>His legendary peak was realized during the **2003-2004 Season**, when he shut down Shaquille O'Neal to carry Detroit to a shocking 4-1 Finals upset against the heavily favored Los Angeles Lakers.</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Accolade Milestone</th>
-                        <th>Tally Count</th>
-                        <th>Impact Reality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NBA Defensive Player of the Year</td>
-                        <td>4 Times</td>
-                        <td>Tied for the most in NBA history.</td>
-                    </tr>
-                    <tr>
-                        <td>NBA All-Star Selections</td>
-                        <td>4 Times</td>
-                        <td>Voted a starter by fans who loved his hard-nosed defense.</td>
-                    </tr>
-                    <tr>
-                        <td>NBA Champion</td>
-                        <td>2004</td>
-                        <td>Defensive anchor of the iconic "Goin' to Work" squad.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="card">
+                <h3>The Goin' to Work Capitalization</h3>
+                <p>When the Detroit Pistons acquired Wallace in the summer of 2000, nobody anticipated they had just secured the backbone of a historical championship unit. Positioned inside the Palace of Auburn Hills, Ben Wallace emerged as <span class="bold-white">"Big Ben"</span>—the ultimate symbol of grit, hard work, and defensive dominance.</p>
+                
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">4x</div>
+                        <div class="metric-label">Defensive Player of the Year</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">15.4</div>
+                        <div class="metric-label">Peak RPG (2002-03)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">3.5</div>
+                        <div class="metric-label">Peak BPG (2001-02)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">2004</div>
+                        <div class="metric-label">NBA Champion</div>
+                    </div>
+                </div>
+
+                <p>His absolute career masterpiece arrived in the <span class="bold-white">2004 NBA Finals</span>. Facing the star-studded Los Angeles Lakers featuring Shaquille O'Neal and Kobe Bryant, Wallace functioned as the structural shutdown anchor. By defending Shaq one-on-one without forcing heavy double-teams, he allowed Detroit's perimeter defenders to lock down the perimeter passing options, concluding in a dominant 4-1 series blowout upset.</p>
+            </div>
         </section>
 
         <!-- PAGE 4: FINAL SEASON -->
         <section id="final-season" class="page-section">
-            <h3>The Final Season & Legacy</h3>
-            <p>After stints playing for Chicago and Cleveland, Wallace returned home to the Detroit Pistons in 2009 to finish out his career where he belonged. His final campaign came in the **2011-2012 NBA Season**.</p>
-            <p>Though his physical minutes were scaled back, his locker room mentorship shaped a young locker room. On February 14, 2012, Wallace broke the legendary record for most games played by an undrafted player in modern NBA history, safely securing his legacy as the ultimate blueprint of defensive basketball.</p>
-            <ul>
-                <li><strong>Final Career Game:</strong> April 26, 2012 against the Philadelphia 76ers.</li>
-                <li><strong>Jersey Retirement:</strong> His iconic #3 banner was raised to the Detroit rafters in 2016.</li>
-            </ul>
+            <div class="article-layout">
+                <div class="main-content">
+                    <div class="card">
+                        <h3>The Detroit Return & Closing Chapter</h3>
+                        <p>Following high-profile career segments playing for the Chicago Bulls and Cleveland Cavaliers, Ben Wallace returned to his true home, signing back with the Detroit Pistons in 2009. His ultimate structural loop was fulfilled during the <span class="bold-white">2011-2012 NBA Campaign</span>.</p>
+                        <p>While Father Time modified his explosiveness, his veteran positioning remained exceptional. He transitioned seamlessly into an elite interior mentor, instructing young athletes on proper shell positioning, defensive floor tracking, and how to outwork highly paid assignments through pure preparation.</p>
+                    </div>
+                </div>
+                <div class="sidebar-zone">
+                    <div class="sidebar-panel">
+                        <h4>Enduring Legacy</h4>
+                        <ul class="list-items">
+                            <li><strong>Historic Milestone:</strong> 1,088 games played by an undrafted icon</li>
+                            <li><strong>Jersey Retirement:</strong> Jan 16, 2016 (#3 Retained forever)</li>
+                            <li><strong>Enshrinement:</strong> First undrafted modern era player in Springfield HOF</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: BEST PLAYS (NEW PAGE) -->
+        <section id="best-plays" class="page-section">
+            <h3 style="margin-bottom: 30px;">Big Ben's Iconic Career Highlights</h3>
+            <div class="plays-grid">
+                
+                <!-- Highlight 1: The Shaq Block -->
+                <div class="play-card">
+                    <div class="media-frame">
+                        <span class="badge-overlay">Defensive Block</span>
+                        <img src="image_agent_tag_846738411342039465" alt="Ben Wallace cleanly blocking Shaquille O'Neal at the rim during the NBA playoffs">
+                    </div>
+                    <div class="play-details">
+                        <h4>Denying The Diesel</h4>
+                        <p>The legendary moment from the Eastern Conference Finals where Ben Wallace met prime, full-steam Shaquille O'Neal directly at the rim, stuffed his baseline power move clean without fouling, and sent the entire arena into absolute hysterics.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 2: The Poster Dunk -->
+                <div class="play-card">
+                    <div class="media-frame">
+                        <span class="badge-overlay">Poster Dunk</span>
+                        <img src="image_agent_tag_846738411342038912" alt="Ben Wallace soaring over defenders for a violent two-handed rim-racking poster dunk">
+                    </div>
+                    <div class="play-details">
+                        <h4>The Rim Wrecker</h4>
+                        <p>Though renowned for his blocking, Big Ben possessed a terrifying vertical leap. Whenever opponents overcommitted to perimeter rotations, he would dive down the baseline, explode off two feet, and throw down massive poster dunks.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Context Space -->
     <footer>
-        <p>&copy; 2026 Tribute Engine. Handcrafted for the legendary Ben Wallace.</p>
+        <p>&copy; 2026 Tribute Engine. Built for the legendary Ben Wallace. All sports media rights belong to their respective creators.</p>
     </footer>
 
-    <!-- JavaScript Engine for Handling Page Transitions -->
+    <!-- Transitions Engine Script -->
     <script>
         function switchPage(targetPageId) {
-            // 1. Gather all individual content views
             const sections = document.querySelectorAll('.page-section');
             const navLinks = document.querySelectorAll('nav ul li a');
 
-            // 2. Clear old active navigation styles and strip existing animations safely
+            // Fade and scale down existing structures
             sections.forEach(section => {
                 section.classList.remove('active-page');
             });
@@ -313,11 +508,11 @@
                 link.classList.remove('active-nav');
             });
 
-            // 3. Inject active structural tracking back to the requested segment elements
+            // Re-engage targeting visibility filters
             document.getElementById(targetPageId).classList.add('active-page');
             document.getElementById('nav-' + targetPageId).classList.add('active-nav');
 
-            // 4. Smoothly scroll window back to top layout perspective if user is far down
+            // Force visual frame alignment
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
